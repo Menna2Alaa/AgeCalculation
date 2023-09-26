@@ -12,22 +12,21 @@ import com.example.agecalculation.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
-    private lateinit var binding : FragmentLoginBinding
-    private lateinit var loginButton : Button
+    private lateinit var binding: FragmentLoginBinding
+    private lateinit var loginButton: Button
 
+    /**
+     *  onCreate is called before onCreateView
+     *  so you need to init the binding in the onCreateView
+     */
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding= FragmentLoginBinding.inflate(inflater,container,false)
-        return binding.root
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding.login.text.toString()
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+       /* binding.login.text.toString()
         val email = binding.userEt.text.toString()
         val password = binding.passWordEt.text.toString()
         loginButton.setOnClickListener {
@@ -36,6 +35,9 @@ class LoginFragment : Fragment() {
                 val navController = view?.findNavController()
                 navController?.navigate(navDirection)
             }
-        }
+        }*/
+        return binding.root
     }
+
+
 }

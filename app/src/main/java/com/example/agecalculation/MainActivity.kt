@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -33,8 +32,7 @@ class MainActivity : AppCompatActivity() {
         val inflater = navHostFragment.navController.navInflater
         graph = inflater.inflate(R.navigation.nav_graph)
 
-
-
+        navController = navHostFragment.navController
         toolbar = binding.toolbar
         val fragments: MutableSet<Int> = HashSet()
         fragments.add(R.id.loginFragment2)
@@ -44,10 +42,8 @@ class MainActivity : AppCompatActivity() {
 
         drawerLayout = binding.drawerLayout
         appBarConfiguration = AppBarConfiguration.Builder().setOpenableLayout(drawerLayout).build()
+        // passing navHostFragment.navController
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
-
-        slider = binding.slider
-        NavigationUI.setupWithNavController(slider, navController)
 
     }
 }
