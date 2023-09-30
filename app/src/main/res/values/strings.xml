@@ -2,4 +2,9 @@
     <string name="app_name">AgeCalculation</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="app_labels">App Labels</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="email">Email</string>
+    <string name="password">password</string>
 </resources>

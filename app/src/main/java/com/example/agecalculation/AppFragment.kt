@@ -16,15 +16,11 @@ class AppFragment : Fragment() {
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding= FragmentAppBinding.inflate(inflater,container,false)
-        return binding.root
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         binding.days.setOnClickListener {
             val navDayCalc =AppFragmentDirections.actionAppFragment2ToDateFragment()
             view?.let { it1 -> Navigation.findNavController(it1).navigate(navDayCalc) }
@@ -34,6 +30,6 @@ class AppFragment : Fragment() {
             val navController = view?.findNavController()
             navController?.navigate(navBirth)
         }
+        return binding.root
     }
-
 }

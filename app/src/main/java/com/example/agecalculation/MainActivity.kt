@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val inflater = navHostFragment.navController.navInflater
         graph = inflater.inflate(R.navigation.nav_graph)
 
-        navController = navHostFragment.navController
+//        navController = navHostFragment.navController
         toolbar = binding.toolbar
         val fragments: MutableSet<Int> = HashSet()
         fragments.add(R.id.loginFragment2)
@@ -41,9 +41,13 @@ class MainActivity : AppCompatActivity() {
         fragments.add(R.id.dateFragment)
 
         drawerLayout = binding.drawerLayout
-        appBarConfiguration = AppBarConfiguration.Builder().setOpenableLayout(drawerLayout).build()
-        // passing navHostFragment.navController
+        appBarConfiguration = AppBarConfiguration.Builder(fragments).setOpenableLayout(drawerLayout).build()
+        navController = navHostFragment.navController
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
+
+        slider = binding.slider
+        NavigationUI.setupWithNavController(slider, navController)
+
 
     }
 }

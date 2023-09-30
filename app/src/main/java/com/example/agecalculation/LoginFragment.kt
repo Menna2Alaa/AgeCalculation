@@ -13,7 +13,6 @@ import com.example.agecalculation.databinding.FragmentLoginBinding
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
-    private lateinit var loginButton: Button
 
     /**
      *  onCreate is called before onCreateView
@@ -26,18 +25,15 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-       /* binding.login.text.toString()
         val email = binding.userEt.text.toString()
         val password = binding.passWordEt.text.toString()
-        loginButton.setOnClickListener {
+        binding.login.setOnClickListener {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 val navDirection = LoginFragmentDirections.actionLoginFragment2ToAppFragment2()
                 val navController = view?.findNavController()
                 navController?.navigate(navDirection)
             }
-        }*/
+       }
         return binding.root
     }
-
-
 }
